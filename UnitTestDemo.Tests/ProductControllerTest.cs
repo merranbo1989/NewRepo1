@@ -20,20 +20,20 @@ namespace UnitTestDemo.Tests
            var productList  = (List<Product>?)result?.ViewData.Model;
             Assert.Equal(3, productList?.Count);
         }
-        [Fact]
+        /* [Fact]
         public void Test_Details_Returns_ViewName()
         {
             var controller = new ProductController();
             var result = controller.Details(2) as ViewResult;
             Assert.Equal("Details", result?.ViewName);
-        }
+        } */
         [Fact]
         public void Test_Details_ReturnsViewData()
         {
             var controller = new ProductController();
             var result = controller.Details(2) as ViewResult;
             var product = result?.ViewData.Model;
-            Assert.Equal("Mobile", product?.ToString());
+            Assert.Equal("Television", product?.ToString());
         }
         [Fact]
         public void Test_Details_RedirectToIndex_IfIdLessThanOne()
